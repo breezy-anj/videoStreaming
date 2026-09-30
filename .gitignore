@@ -1,0 +1,9 @@
+node_modules/
+.env
+.DS_Store
+
+# Ignore all markdown files
+*.md
+
+# Except video.md
+!video.md
