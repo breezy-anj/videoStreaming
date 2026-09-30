@@ -2,6 +2,9 @@ node_modules/
 .env
 .DS_Store
 
+# Ignore video files
+videos/
+
 # Ignore all markdown files
 *.md
 
