@@ -1,4 +1,5 @@
 import fs from "fs";
+
 const videoController = (req, res) => {
   const filename = req.params.filename;
   const videoPath = `./videos/${filename}`;
@@ -7,6 +8,7 @@ const videoController = (req, res) => {
   if (!fs.existsSync(videoPath)) return res.status(404).send("Video not found");
 
   const fileSize = fs.statSync(videoPath).size;
+
   if (!range) {
     return res.status(400).send("range empty");
   }
@@ -31,4 +33,3 @@ const videoController = (req, res) => {
 };
 
 export default videoController;
-
