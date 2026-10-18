@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>StreamForge — Watch Anything</title>
+    <meta name="description" content="StreamForge — A fast, chunked video streaming app. Watch curated films without buffering your whole connection." />
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+
+    <!-- Username Modal -->
+    <div class="modal-overlay" id="usernameModal">
+      <div class="modal">
+        <div class="modal-logo">Stream<span>Forge</span></div>
+        <h2>What should we call you?</h2>
+        <p>No sign-up needed. Just enter a username to get started.</p>
+        <input
+          class="modal-input"
+          id="usernameInput"
+          type="text"
+          placeholder="Enter username..."
+          maxlength="12"
+          autocomplete="off"
+        />
+        <button class="modal-btn" id="usernameSubmit">Let's Watch →</button>
+      </div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+      <div class="navbar-brand">Stream<span>Forge</span></div>
+      <div class="navbar-user">
+        <span>Watching as</span>
+        <div class="avatar" id="navAvatar">?</div>
+        <strong id="navUsername">...</strong>
+      </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+      <h1 class="hero-title">Your <span>Stream</span>, Your Rules</h1>
+      <p class="hero-subtitle">No buffering. Chunked delivery. Memory-optimised.</p>
+    </section>
+
+    <!-- Video Catalog -->
+    <section class="section">
+      <p class="section-title">All Videos</p>
+      <div class="video-grid" id="videoGrid">
+        <!-- Skeleton loaders shown while fetching -->
+        <div class="skeleton-card">
+          <div class="skeleton skeleton-thumb"></div>
+          <div class="skeleton-info">
+            <div class="skeleton skeleton-line" style="width: 70%"></div>
+            <div class="skeleton skeleton-line" style="width: 45%"></div>
+          </div>
+        </div>
+        <div class="skeleton-card">
+          <div class="skeleton skeleton-thumb"></div>
+          <div class="skeleton-info">
+            <div class="skeleton skeleton-line" style="width: 80%"></div>
+            <div class="skeleton skeleton-line" style="width: 50%"></div>
+          </div>
+        </div>
+        <div class="skeleton-card">
+          <div class="skeleton skeleton-thumb"></div>
+          <div class="skeleton-info">
+            <div class="skeleton skeleton-line" style="width: 60%"></div>
+            <div class="skeleton skeleton-line" style="width: 40%"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script src="/app.js"></script>
+  </body>
+</html>

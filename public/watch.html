@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Watch — StreamForge</title>
+    <meta name="description" content="Watch your selected film on StreamForge with chunked MSE streaming." />
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+      <a class="navbar-brand" href="/">Stream<span>Forge</span></a>
+      <div class="navbar-user">
+        <span>Watching as</span>
+        <div class="avatar" id="navAvatar">?</div>
+        <strong id="navUsername">...</strong>
+      </div>
+    </nav>
+
+    <!-- Watch Layout -->
+    <div class="watch-layout">
+
+      <!-- Left: Player + Info -->
+      <main class="watch-main">
+        <div class="player-wrapper">
+          <!-- Loading overlay -->
+          <div class="player-loading" id="playerLoading">
+            <div class="spinner"></div>
+            <p>Loading stream...</p>
+          </div>
+          <video
+            id="videoPlayer"
+            controls
+            autoplay
+            playsinline
+          ></video>
+        </div>
+
+        <!-- Buffer bar -->
+        <div class="buffer-bar-wrapper">
+          <span id="bufferLabel">Buffer: 0MB</span>
+          <div class="buffer-bar">
+            <div class="buffer-bar-fill" id="bufferFill"></div>
+          </div>
+          <span id="bufferChunks">0 chunks</span>
+        </div>
+
+        <!-- Video info -->
+        <div style="margin-top: 20px;">
+          <h1 class="watch-title" id="videoTitle">Loading...</h1>
+          <div class="watch-meta" id="videoMeta">
+            <span class="badge" id="videoBadge">—</span>
+            <span id="videoYear">—</span>
+            <span id="videoDuration">—</span>
+          </div>
+          <p class="watch-desc" id="videoDesc">—</p>
+        </div>
+      </main>
+
+      <!-- Right: Comments Sidebar -->
+      <aside class="watch-sidebar">
+        <div class="sidebar-title">
+          Comments
+          <span class="comment-count" id="commentCount">0</span>
+        </div>
+
+        <!-- Comment form -->
+        <div class="comment-form">
+          <textarea
+            class="comment-textarea"
+            id="commentInput"
+            placeholder="Say something about this video..."
+            maxlength="100"
+            rows="3"
+          ></textarea>
+          <button class="comment-submit-btn" id="commentSubmit">Post Comment</button>
+        </div>
+
+        <!-- Comment list -->
+        <div class="comment-list" id="commentList">
+          <div class="no-comments">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+            </svg>
+            <p>No comments yet. Be the first!</p>
+          </div>
+        </div>
+      </aside>
+    </div>
+
+    <script src="/player.js"></script>
+  </body>
+</html>
